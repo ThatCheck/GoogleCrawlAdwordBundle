@@ -6,6 +6,13 @@
         "name" : "Florian Cabirol",
         "email" : "cabirol.florian.pro@gmail.com"
     }],
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/SneakyBobito/google-url"
+        }
+
+    ],
     "keywords" : [
         "Google",
         "Adword",
@@ -23,9 +30,6 @@
         }
     },
     "target-dir" : "thatcheck/GoogleAdwordBundle",
-    "repositories" : [{
-
-    }],
     "extra" : {
         "branch-alias" : {
             "dev-master" : "master"
