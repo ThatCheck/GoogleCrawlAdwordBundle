@@ -1,0 +1,33 @@
+{
+    "name" : "thatcheck/GoogleAdwordBundle",
+    "description" : "GoogleAdword crawl capatibily bundle",
+    "type" : "symfony-bundle",
+    "authors" : [{
+        "name" : "Florian Cabirol",
+        "email" : "cabirol.florian.pro@gmail.com"
+    }],
+    "keywords" : [
+        "Google",
+        "Adword",
+        "Crawl"
+    ],
+    "license" : [
+        "MIT"
+    ],
+    "require" : {
+    },
+    "autoload" : {
+        "psr-0" : {
+            "Company\\DemoBundle" : ""
+        }
+    },
+    "target-dir" : "Cthatcheck/GoogleAdwordBundle",
+    "repositories" : [{
+
+    }],
+    "extra" : {
+        "branch-alias" : {
+            "dev-master" : "master"
+        }
+    }
+}
