@@ -15,13 +15,14 @@
         "MIT"
     ],
     "require" : {
+        "sneakybobito/google-url": "dev-master"
     },
     "autoload" : {
         "psr-0" : {
-            "Company\\DemoBundle" : ""
+            "Thatcheck\\GoogleAdwordBundle" : ""
         }
     },
-    "target-dir" : "Cthatcheck/GoogleAdwordBundle",
+    "target-dir" : "thatcheck/GoogleAdwordBundle",
     "repositories" : [{
 
     }],
