@@ -29,7 +29,6 @@
             "Thatcheck\\GoogleAdwordBundle" : ""
         }
     },
-    "target-dir" : "thatcheck/GoogleAdwordBundle",
     "extra" : {
         "branch-alias" : {
             "dev-master" : "master"
