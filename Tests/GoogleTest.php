@@ -9,6 +9,14 @@
 
 namespace Thatcheck\GoogleAdwordBundle\Test;
 
-class GoogleTest extends \PHPUnit_Framework_TestCase
+use Symfony\Bundle\FrameworkBundle\Test\KernelTestCase;
+
+class GoogleTest extends KernelTestCase
 {
+    public function testSendFrRequest()
+    {
+        $kernel = $this->createKernel();
+        $kernel->boot();
+        $kernel->getContainer()->get('thatcheck_google_adword.google')->search('amazon');
+    }
 }

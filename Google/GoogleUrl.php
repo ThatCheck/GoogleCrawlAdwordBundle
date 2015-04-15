@@ -13,6 +13,7 @@ use Goutte\Client;
 use Symfony\Component\DomCrawler\Crawler;
 use Thatcheck\GoogleAdwordBundle\Google\Lang\GoogleFrCrawler;
 use Thatcheck\GoogleAdwordBundle\Google\Lang\GoogleLangInterface;
+use Thatcheck\GoogleAdwordBundle\Google\Lang\LangFactory;
 use Thatcheck\GoogleAdwordBundle\Google\Param\GoogleParams;
 use Thatcheck\GoogleAdwordBundle\Google\Parser\AdwordParser;
 
@@ -38,11 +39,17 @@ class GoogleUrl
      */
     private $request;
 
-    public function __construct()
+    /**
+     * @var LangFactory
+     */
+    private $langFactory;
+
+    public function __construct(LangFactory $lang)
     {
+        $this->langFactory = $lang;
         $this->client = new Client();
         $this->googleLang = new GoogleFrCrawler();
-        $this->setLang($this->googleLang);
+        $this->setLang('FR');
     }
 
     private function configureGoutteClient()
@@ -53,9 +60,9 @@ class GoogleUrl
         $this->client->getClient()->setDefaultOption('config/curl/'.CURLOPT_SSL_VERIFYPEER, false);
     }
 
-    public function setLang(GoogleLangInterface $lang)
+    public function setLang($lang)
     {
-        $this->googleLang = $lang;
+        $this->googleLang = $this->langFactory->getLang($lang);
         $this->googleParams = new GoogleParams($this->googleLang);
 
         $this->configureGoutteClient();

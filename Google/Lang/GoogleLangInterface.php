@@ -12,4 +12,6 @@ namespace Thatcheck\GoogleAdwordBundle\Google\Lang;
 interface GoogleLangInterface
 {
     public function getLangConst();
+
+    public function getLang();
 }

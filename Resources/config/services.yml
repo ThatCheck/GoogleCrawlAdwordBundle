@@ -1,3 +1,12 @@
 services:
     thatcheck_google_adword.google:
         class: Thatcheck\GoogleAdwordBundle\Google\GoogleUrl
+        arguments: [@thatcheck.lang_factory]
+
+    thatcheck.lang_factory:
+        class: Thatcheck\GoogleAdwordBundle\Google\Lang\LangFactory
+
+    thatcheck.lang.fr:
+        class: Thatcheck\GoogleAdwordBundle\Google\Lang\GoogleFrCrawler
+        tags:
+            -  { name: thatcheck.lang, lang: FR }
