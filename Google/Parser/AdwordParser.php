@@ -69,11 +69,8 @@ class AdwordParser
 
     public static function parseAll(Crawler $crawler)
     {
-        $array = array();
         $res1 = self::parseBody($crawler);
         $res2 = self::parseColmun($crawler);
-        array_merge($array, $res1, $res2);
-
-        return $array;
+        return array_merge($res1, $res2);
     }
 }
