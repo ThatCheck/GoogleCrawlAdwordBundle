@@ -46,7 +46,7 @@ class AdwordParser
     public static function parseColmun(Crawler $crawler)
     {
         $arrayResult = array();
-        $crawler->filterXPath(self::RHS_QUERY_BODY)->each(
+        $crawler->filterXPath(self::RHS_QUERY_COLUMN)->each(
             function (Crawler $node, $i) use (&$arrayResult) {
                 $aTag = $node->filterXPath(self::RHS_LINK, $node)->getNode(0);
                 $visUrlTag = $node->filterXPath(self::RHS_VISURL, $node)->getNode(0);
