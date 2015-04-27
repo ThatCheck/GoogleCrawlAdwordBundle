@@ -105,4 +105,12 @@ class GoogleUrl
     {
         return $this->googleParams;
     }
+
+    /**
+     * @return Client
+     */
+    public function getClient()
+    {
+        return $this->client;
+    }
 }
