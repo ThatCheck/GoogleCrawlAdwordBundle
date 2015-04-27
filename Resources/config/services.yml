@@ -10,3 +10,38 @@ services:
         class: Thatcheck\GoogleAdwordBundle\Google\Lang\GoogleFrCrawler
         tags:
             -  { name: thatcheck.lang, lang: FR }
+
+    thatcheck.lang.be:
+        class: Thatcheck\GoogleAdwordBundle\Google\Lang\GoogleBeCrawler
+        tags:
+            -  { name: thatcheck.lang, lang: BE }
+
+    thatcheck.lang.ch:
+        class: Thatcheck\GoogleAdwordBundle\Google\Lang\GoogleChCrawler
+        tags:
+            -  { name: thatcheck.lang, lang: CH }
+
+    thatcheck.lang.de:
+        class: Thatcheck\GoogleAdwordBundle\Google\Lang\GoogleDeCrawler
+        tags:
+            -  { name: thatcheck.lang, lang: DE }
+
+    thatcheck.lang.en:
+        class: Thatcheck\GoogleAdwordBundle\Google\Lang\GoogleEnCrawler
+        tags:
+            -  { name: thatcheck.lang, lang: EN }
+
+    thatcheck.lang.es:
+        class: Thatcheck\GoogleAdwordBundle\Google\Lang\GoogleEsCrawler
+        tags:
+            -  { name: thatcheck.lang, lang: ES }
+
+    thatcheck.lang.it:
+        class: Thatcheck\GoogleAdwordBundle\Google\Lang\GoogleItCrawler
+        tags:
+            -  { name: thatcheck.lang, lang: IT }
+
+    thatcheck.lang.pt:
+        class: Thatcheck\GoogleAdwordBundle\Google\Lang\GooglePtCrawler
+        tags:
+            -  { name: thatcheck.lang, lang: PT }

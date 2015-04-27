@@ -71,6 +71,7 @@ class AdwordParser
     {
         $res1 = self::parseBody($crawler);
         $res2 = self::parseColmun($crawler);
+
         return array_merge($res1, $res2);
     }
 }
