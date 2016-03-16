@@ -1,7 +1,7 @@
 services:
     thatcheck_google_adword.google:
         class: Thatcheck\GoogleAdwordBundle\Google\GoogleUrl
-        arguments: [@thatcheck.lang_factory]
+        arguments: ["@thatcheck.lang_factory"]
 
     thatcheck.lang_factory:
         class: Thatcheck\GoogleAdwordBundle\Google\Lang\LangFactory
