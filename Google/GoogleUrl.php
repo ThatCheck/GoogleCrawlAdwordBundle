@@ -6,8 +6,7 @@
  * Date: 14/04/2015
  * Time: 13:35.
  */
-
-namespace Thatcheck\GoogleAdwordBundle\Google;
+namespace thatcheck\GoogleAdwordBundle\Google;
 
 use Goutte\Client;
 use Symfony\Component\DomCrawler\Crawler;
@@ -16,6 +15,7 @@ use Thatcheck\GoogleAdwordBundle\Google\Lang\GoogleLangInterface;
 use Thatcheck\GoogleAdwordBundle\Google\Lang\LangFactory;
 use Thatcheck\GoogleAdwordBundle\Google\Param\GoogleParams;
 use Thatcheck\GoogleAdwordBundle\Google\Parser\AdwordParser;
+use GuzzleHttp\Client as GuzzleClient;
 
 class GoogleUrl
 {
@@ -54,10 +54,19 @@ class GoogleUrl
 
     private function configureGoutteClient()
     {
+        $guzzleClient = new GuzzleClient(array(
+            'defaults' => array(
+                'allow_redirects' => false,
+                'cookies' => true,
+            ),
+            'curl' => array(
+                CURLOPT_SSL_VERIFYPEER => false,
+            ),
+        ));
+        $this->client->setClient($guzzleClient);
         $this->client->followRedirects(true);
         $this->client->setHeader('User-Agent', 'Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2049.0 Safari/537.36');
         $this->client->setHeader('Accept-Language', $this->googleLang->getLangConst()['ACCEPT']);
-        $this->client->getClient()->setDefaultOption('config/curl/'.CURLOPT_SSL_VERIFYPEER, false);
     }
 
     public function setLang($lang)
