@@ -6,7 +6,7 @@
  * Date: 14/04/2015
  * Time: 13:35.
  */
-namespace thatcheck\GoogleAdwordBundle\Google;
+namespace Thatcheck\GoogleAdwordBundle\Google;
 
 use Goutte\Client;
 use Symfony\Component\DomCrawler\Crawler;
